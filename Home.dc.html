@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Ignite School MUN 2026 — Model United Nations at Ignite School</title>
+<meta name="description" content="Ignite School MUN 2026 — two days of debate at Ignite School. [N COMMITTEES] committees, [N DELEGATES] delegates. Sign up as a delegate.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600&display=swap">
+<script src="image-slot.js"></script>
+<script src="reveal.js"></script>
+<style>
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: #fff; color: #16181C; font-family: Inter, system-ui, sans-serif; overflow-x: hidden; }
+  * { box-sizing: border-box; }
+  a { color: #C08F00; }
+  a:hover { color: #16181C; }
+  :focus-visible { outline: 2px solid #C08F00; outline-offset: 2px; }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+</style>
+</helmet>
+<dc-import name="Nav" active="" hint-size="100%,80px"></dc-import>
+
+<main>
+  <section aria-label="Conference introduction" style="position:relative;background:#16181C;min-height:640px;height:min(86vh,860px);display:flex;align-items:flex-end;overflow:hidden">
+    <div aria-hidden="true" style="position:absolute;inset:0">
+      <image-slot id="mun-hero" shape="rect" placeholder="Hero — wide shot of the school hall / delegates in session (≥2400×1400)"></image-slot>
+    </div>
+    <div aria-hidden="true" style="position:absolute;inset:0;background:#16181C;opacity:.72;pointer-events:none"></div>
+    <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(to top,rgba(22,24,28,.92) 0%,rgba(22,24,28,.25) 60%,rgba(22,24,28,.45) 100%);pointer-events:none"></div>
+    <div aria-hidden="true" style="position:absolute;inset:0;background-image:radial-gradient(#fff 1px,transparent 1px);background-size:24px 24px;opacity:.05;pointer-events:none"></div>
+    <div style="position:relative;pointer-events:none;width:100%;max-width:1200px;margin:0 auto;padding:clamp(48px,8vw,96px) clamp(24px,5vw,64px) clamp(40px,5vw,64px);display:flex;flex-direction:column;gap:clamp(24px,3vw,32px);align-items:flex-start">
+      <div data-reveal style="display:flex;flex-direction:column;gap:16px;align-items:flex-start;pointer-events:auto">
+        <span aria-hidden="true" style="display:block;width:48px;height:3px;background:#E8B10A"></span>
+        <span style="font-size:15px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.85)">November 21–22, 2026 &nbsp;·&nbsp; [CITY, COUNTRY]</span>
+      </div>
+      <h1 data-reveal style="margin:0;font-family:'Source Serif 4',Georgia,serif;font-weight:700;font-size:clamp(38px,6.4vw,68px);line-height:1.05;letter-spacing:-.02em;color:#fff;max-width:20ch;pointer-events:auto">Ignite School MUN<br><span style="color:#E8B10A">2026</span></h1>
+      <p data-reveal style="margin:0;font-size:clamp(18px,2vw,20px);line-height:1.6;color:rgba(255,255,255,.88);max-width:52ch;text-wrap:pretty;pointer-events:auto">Ignite School's first Model UN. Bring an argument worth having.</p>
+      <div data-reveal style="display:flex;flex-wrap:wrap;gap:14px;pointer-events:auto">
+        <a href="Register.dc.html" aria-label="Sign up as a delegate" style="background:#E8B10A;color:#16181C;font-size:16px;font-weight:600;text-decoration:none;padding:14px 28px;border-radius:4px;transition:background 180ms ease,transform 180ms ease" style-hover="background:#C08F00;transform:translateY(-1px)">Sign Up</a>
+        <a href="Committees.dc.html" style="color:#fff;font-size:16px;font-weight:600;text-decoration:none;padding:14px 28px;border-radius:4px;border:1.5px solid rgba(255,255,255,.4);transition:background 180ms ease,color 180ms ease" style-hover="background:#fff;color:#16181C">Explore Committees</a>
+      </div>
+      <dl data-reveal style="margin:8px 0 0;width:100%;display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1px;pointer-events:auto;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.15);border-radius:4px;overflow:hidden">
+        <div style="background:rgba(255,255,255,.08);padding:clamp(18px,2.4vw,28px);display:flex;flex-direction:column;gap:6px">
+          <dd style="margin:0;font-family:'Source Serif 4',Georgia,serif;font-weight:700;font-size:clamp(40px,4.4vw,56px);line-height:1;color:#E8B10A">[N]</dd>
+          <dt style="font-size:13px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:#9AA1AB">Delegates</dt>
+        </div>
+        <div style="background:rgba(255,255,255,.08);padding:clamp(18px,2.4vw,28px);display:flex;flex-direction:column;gap:6px">
+          <dd style="margin:0;font-family:'Source Serif 4',Georgia,serif;font-weight:700;font-size:clamp(40px,4.4vw,56px);line-height:1;color:#E8B10A">[N]</dd>
+          <dt style="font-size:13px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:#9AA1AB">Committees</dt>
+        </div>
+        <div style="background:rgba(255,255,255,.08);padding:clamp(18px,2.4vw,28px);display:flex;flex-direction:column;gap:6px">
+          <dd style="margin:0;font-family:'Source Serif 4',Georgia,serif;font-weight:700;font-size:clamp(40px,4.4vw,56px);line-height:1;color:#E8B10A">[N]</dd>
+          <dt style="font-size:13px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:#9AA1AB">Schools</dt>
+        </div>
+        <div style="background:rgba(255,255,255,.08);padding:clamp(18px,2.4vw,28px);display:flex;flex-direction:column;gap:6px">
+          <dd style="margin:0;font-family:'Source Serif 4',Georgia,serif;font-weight:700;font-size:clamp(40px,4.4vw,56px);line-height:1;color:#E8B10A">2</dd>
+          <dt style="font-size:13px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:#9AA1AB">Days</dt>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <section style="background:#fff;padding:clamp(56px,9vw,120px) 0">
+    <div style="width:100%;max-width:1200px;margin:0 auto;padding:0 clamp(24px,5vw,64px);display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(32px,5vw,64px);align-items:start">
+      <div data-reveal style="position:relative;aspect-ratio:4/5;border:1px solid #DCDFE4;border-radius:4px;overflow:hidden;max-width:420px">
+        <image-slot id="mun-sg-portrait" shape="rect" placeholder="Secretary-General portrait, 4:5"></image-slot>
+      </div>
+      <div data-reveal style="display:flex;flex-direction:column;gap:20px;align-items:flex-start">
+        <span aria-hidden="true" style="display:block;width:48px;height:3px;background:#E8B10A"></span>
+        <span style="font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#C08F00">Welcome</span>
+        <h2 style="margin:0;font-family:'Source Serif 4',Georgia,serif;font-weight:700;font-size:clamp(30px,3.6vw,44px);line-height:1.15;letter-spacing:-.015em;max-width:22ch;text-wrap:pretty">Nobody here has done this before either</h2>
+        <p style="margin:0;font-size:clamp(16px,1.5vw,17px);line-height:1.7;color:#5B636E;max-width:60ch;text-wrap:pretty">You will walk into a room of people you have never met, holding a country you did not choose, and someone will ask you to speak first. That moment is the whole point. Everything that follows — the notes, the blocs, the resolution that nearly collapses at the vote — grows out of it.</p>
+        <p style="margin:0;font-size:clamp(16px,1.5vw,17px);line-height:1.7;color:#5B636E;max-width:60ch;text-wrap:pretty">This is the first ISMUN, so none of it is a tradition yet. The procedure will be real, the topics current, and the chairs properly prepared. But the character of this conference is still unwritten, and the delegates in the first room are the ones who get to write it.</p>
+        <div style="display:flex;flex-direction:column;gap:2px;margin-top:4px">
+          <span style="font-family:'Source Serif 4',Georgia,serif;font-size:20px;font-weight:600">[NAME]</span>
+          <span style="font-size:14px;font-weight:500;color:#9AA1AB">Secretary-General, ISMUN 2026</span>
+        </div>
+        <a href="About.dc.html" style="font-size:16px;font-weight:600;color:#16181C;text-decoration:none;border-bottom:2px solid #E8B10A;padding-bottom:2px" style-hover="color:#C08F00">Read the full letter →</a>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#F4F5F7;padding:clamp(56px,9vw,120px) 0">
+    <div style="width:100%;max-width:1200px;margin:0 auto;padding:0 clamp(24px,5vw,64px);display:flex;flex-direction:column;gap:clamp(40px,5vw,64px)">
+      <div data-reveal style="display:flex;flex-direction:column;gap:16px;align-items:center;text-align:center">
+        <span aria-hidden="true" style="display:block;width:48px;height:3px;background:#E8B10A"></span>
+        <span style="font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#C08F00">The Basics</span>
+        <h2 style="margin:0;font-family:'Source Serif 4',Georgia,serif;font-weight:700;font-size:clamp(30px,3.6vw,44px);line-height:1.15;letter-spacing:-.015em">What is ISMUN?</h2>
+        <p style="margin:0;font-size:clamp(18px,1.8vw,20px);line-height:1.6;color:#5B636E;max-width:56ch;text-wrap:pretty">You take a country, you take a crisis, and you argue your way to something the room can live with.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(28px,4vw,48px)">
+        <div data-reveal style="display:flex;flex-direction:column;gap:14px;align-items:flex-start;padding-right:clamp(0px,2vw,24px)">
+          <span style="width:48px;height:48px;background:#FFF7DC;border-radius:4px;display:flex;align-items:center;justify-content:center">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C08F00" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8A8.5 8.5 0 0 1 12.5 20a8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7A8.4 8.4 0 0 1 4 11.5a8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8v.5Z"></path></svg>
+          </span>
+          <h3 style="margin:0;font-size:18px;font-weight:600;line-height:1.4">Real procedure, properly run</h3>
+          <p style="margin:0;font-size:16px;line-height:1.7;color:#5B636E;max-width:36ch;text-wrap:pretty">Genuine UN rules of procedure, real draft resolutions, and chairs who will hold you to both. Nothing is watered down because you are new to it.</p>
+        </div>
+        <div data-reveal style="display:flex;flex-direction:column;gap:14px;align-items:flex-start;padding-right:clamp(0px,2vw,24px);border-left:1px solid #DCDFE4;padding-left:clamp(0px,4vw,48px)">
+          <span style="width:48px;height:48px;background:#FFF7DC;border-radius:4px;display:flex;align-items:center;justify-content:center">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C08F00" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18Z"></path></svg>
+          </span>
+          <h3 style="margin:0;font-size:18px;font-weight:600;line-height:1.4">Issues that are actually live</h3>
+          <p style="margin:0;font-size:16px;line-height:1.7;color:#5B636E;max-width:36ch;text-wrap:pretty">Topics taken from this year's headlines rather than a textbook, so no one spends a weekend re-arguing a question the world already settled.</p>
+        </div>
+        <div data-reveal style="display:flex;flex-direction:column;gap:14px;align-items:flex-start;border-left:1px solid #DCDFE4;padding-left:clamp(0px,4vw,48px)">
+          <span style="width:48px;height:48px;background:#FFF7DC;border-radius:4px;display:flex;align-items:center;justify-content:center">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C08F00" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"></path></svg>
+          </span>
+          <h3 style="margin:0;font-size:18px;font-weight:600;line-height:1.4">Skills that outlast the weekend</h3>
+          <p style="margin:0;font-size:16px;line-height:1.7;color:#5B636E;max-width:36ch;text-wrap:pretty">Negotiating, drafting, and speaking to a room that disagrees with you — three things you will keep using long after the final gavel.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#fff;padding:clamp(56px,9vw,120px) 0">
+    <div style="width:100%;max-width:1200px;margin:0 auto;padding:0 clamp(24px,5vw,64px);display:flex;flex-direction:column;gap:clamp(32px,4vw,48px)">
+      <div data-reveal style="display:flex;flex-wrap:wrap;gap:20px 32px;align-items:flex-end;justify-content:space-between">
+        <div style="display:flex;flex-direction:column;gap:16px;align-items:flex-start">
+          <span aria-hidden="true" style="display:block;width:48px;height:3px;background:#E8B10A"></span>
+          <span style="font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#C08F00">Committees</span>
+          <h2 style="margin:0;font-family:'Source Serif 4',Georgia,serif;font-weight:700;font-size:clamp(30px,3.6vw,44px);line-height:1.15;letter-spacing:-.015em">Find your room</h2>
+        </div>
+        <a href="Committees.dc.html" style="font-size:16px;font-weight:600;color:#16181C;text-decoration:none;border-bottom:2px solid #E8B10A;padding-bottom:2px" style-hover="color:#C08F00">All committees →</a>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px">
+        <sc-for list="{{ committees }}" as="c" hint-placeholder-count="6">
+          <a href="CommitteeDetail.dc.html" data-reveal style="display:flex;flex-direction:column;gap:12px;align-items:flex-start;background:#fff;border:1px solid #DCDFE4;border-radius:4px;padding:28px;text-decoration:none;color:#16181C;transition:border-color 180ms ease,transform 180ms ease" style-hover="border-color:#E8B10A;transform:translateY(-2px)">
+            <span aria-hidden="true" style="font-family:'Source Serif 4',Georgia,serif;font-weight:700;font-size:40px;line-height:1;color:#DCDFE4">{{ c.num }}</span>
+            <span style="font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#C08F00">{{ c.abbr }}</span>
+            <h3 style="margin:0;font-family:'Source Serif 4',Georgia,serif;font-weight:600;font-size:24px;line-height:1.3">{{ c.name }}</h3>
+            <p style="margin:0;font-size:16px;line-height:1.7;color:#5B636E">{{ c.remit }}</p>
+            <span style="font-size:14px;font-weight:500;color:#9AA1AB;margin-top:auto;padding-top:8px">{{ c.topicCount }} topics</span>
+            <span style="font-size:15px;font-weight:600;border-bottom:2px solid #E8B10A;padding-bottom:2px">Learn more →</span>
+          </a>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section style="position:relative;background:#16181C;color:#fff;padding:clamp(56px,9vw,120px) 0;overflow:hidden">
+    <div aria-hidden="true" style="position:absolute;inset:0;background-image:radial-gradient(#fff 1px,transparent 1px);background-size:24px 24px;opacity:.05"></div>
+    <div style="position:relative;width:100%;max-width:1200px;margin:0 auto;padding:0 clamp(24px,5vw,64px);display:flex;flex-direction:column;gap:clamp(40px,5vw,56px);align-items:center">
+      <div data-reveal style="display:flex;flex-direction:column;gap:16px;align-items:center;text-align:center">
+        <span aria-hidden="true" style="display:block;width:48px;height:3px;background:#E8B10A"></span>
+        <span style="font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#E8B10A">Key Details</span>
+        <h2 style="margin:0;font-family:'Source Serif 4',Georgia,serif;font-weight:700;font-size:clamp(30px,3.6vw,44px);line-height:1.15;letter-spacing:-.015em;color:#fff">Everything you need to know</h2>
+      </div>
+      <div data-reveal style="width:100%;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.12);border-radius:4px;overflow:hidden">
+        <div style="background:#16181C;padding:clamp(24px,3vw,32px);display:flex;flex-direction:column;gap:10px">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E8B10A" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4"></path></svg>
+          <span style="font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#9AA1AB">When</span>
+          <span style="font-family:'Source Serif 4',Georgia,serif;font-size:21px;line-height:1.35">21–22 November 2026</span>
+          <span style="font-size:15px;line-height:1.6;color:#9AA1AB">[DAILY START/END TIMES]</span>
+        </div>
+        <div style="background:#16181C;padding:clamp(24px,3vw,32px);display:flex;flex-direction:column;gap:10px">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E8B10A" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          <span style="font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#9AA1AB">Where</span>
+          <span style="font-family:'Source Serif 4',Georgia,serif;font-size:21px;line-height:1.35">Ignite School</span>
+          <span style="font-size:15px;line-height:1.6;color:#9AA1AB">[FULL ADDRESS]</span>
+        </div>
+        <div style="background:#16181C;padding:clamp(24px,3vw,32px);display:flex;flex-direction:column;gap:10px">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E8B10A" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.9"></path></svg>
+          <span style="font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#9AA1AB">Who</span>
+          <span style="font-family:'Source Serif 4',Georgia,serif;font-size:21px;line-height:1.35">Secondary school students</span>
+          <span style="font-size:15px;line-height:1.6;color:#9AA1AB">No prior MUN experience needed.</span>
+        </div>
+        <div style="background:#16181C;padding:clamp(24px,3vw,32px);display:flex;flex-direction:column;gap:10px">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E8B10A" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"></rect><circle cx="12" cy="12" r="2.5"></circle></svg>
+          <span style="font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#9AA1AB">Fee</span>
+          <span style="font-family:'Source Serif 4',Georgia,serif;font-size:21px;line-height:1.35">[DELEGATE FEE]</span>
+          <span style="font-size:15px;line-height:1.6;color:#9AA1AB">Lunch, delegate pack and every session.</span>
+        </div>
+      </div>
+      <a href="Schedule.dc.html" data-reveal style="color:#fff;font-size:16px;font-weight:600;text-decoration:none;padding:14px 28px;border-radius:4px;border:1.5px solid rgba(255,255,255,.4);transition:background 180ms ease,color 180ms ease" style-hover="background:#fff;color:#16181C">See the full schedule →</a>
+    </div>
+  </section>
+
+  <section style="background:#fff;padding:clamp(56px,9vw,120px) 0">
+    <div style="width:100%;max-width:1200px;margin:0 auto;padding:0 clamp(24px,5vw,64px);display:flex;flex-direction:column;gap:clamp(40px,5vw,64px)">
+      <div data-reveal style="display:flex;flex-direction:column;gap:16px;align-items:flex-start">
+        <span aria-hidden="true" style="display:block;width:48px;height:3px;background:#E8B10A"></span>
+        <span style="font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#C08F00">How it works</span>
+        <h2 style="margin:0;font-family:'Source Serif 4',Georgia,serif;font-weight:700;font-size:clamp(30px,3.6vw,44px);line-height:1.15;letter-spacing:-.015em">From sign-up to the floor</h2>
+      </div>
+      <ol style="margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:clamp(28px,3vw,32px)">
+        <sc-for list="{{ steps }}" as="s" hint-placeholder-count="4">
+          <li data-reveal style="display:flex;flex-direction:column;gap:12px;align-items:flex-start;border-top:1px solid #DCDFE4;padding-top:24px;position:relative">
+            <span aria-hidden="true" style="position:absolute;top:-5.5px;left:0;width:11px;height:11px;border-radius:50%;background:#E8B10A"></span>
+            <span aria-hidden="true" style="font-family:'Source Serif 4',Georgia,serif;font-weight:700;font-size:32px;line-height:1;color:#DCDFE4">{{ s.num }}</span>
+            <h3 style="margin:0;font-family:'Source Serif 4',Georgia,serif;font-weight:600;font-size:22px;line-height:1.3">{{ s.title }}</h3>
+            <p style="margin:0;font-size:16px;line-height:1.7;color:#5B636E">{{ s.desc }}</p>
+            <span style="font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#C08F00">{{ s.when }}</span>
+          </li>
+        </sc-for>
+      </ol>
+    </div>
+  </section>
+
+  <section style="background:#F4F5F7;padding:clamp(56px,9vw,120px) 0">
+    <div style="width:100%;max-width:1200px;margin:0 auto;padding:0 clamp(24px,5vw,64px);display:flex;flex-direction:column;gap:clamp(32px,4vw,48px)">
+      <div data-reveal style="display:flex;flex-wrap:wrap;gap:20px 32px;align-items:flex-end;justify-content:space-between">
+        <div style="display:flex;flex-direction:column;gap:16px;align-items:flex-start">
+          <span aria-hidden="true" style="display:block;width:48px;height:3px;background:#E8B10A"></span>
+          <span style="font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#C08F00">Secretariat</span>
+          <h2 style="margin:0;font-family:'Source Serif 4',Georgia,serif;font-weight:700;font-size:clamp(30px,3.6vw,44px);line-height:1.15;letter-spacing:-.015em">The people running it</h2>
+        </div>
+        <a href="Team.dc.html" style="font-size:16px;font-weight:600;color:#16181C;text-decoration:none;border-bottom:2px solid #E8B10A;padding-bottom:2px" style-hover="color:#C08F00">Meet the full team →</a>
+      </div>
+      <ul data-reveal style="margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:24px">
+        <sc-for list="{{ leads }}" as="p" hint-placeholder-count="6">
+          <li style="display:flex;flex-direction:column;gap:10px;align-items:flex-start">
+            <span style="position:relative;display:block;width:100%;aspect-ratio:4/5;border:1px solid #DCDFE4;border-radius:4px;overflow:hidden;filter:grayscale(1);transition:filter 180ms ease" style-hover="filter:grayscale(0)">
+              <image-slot id="{{ p.slot }}" shape="rect" placeholder="Portrait 4:5"></image-slot>
+            </span>
+            <span style="font-family:'Source Serif 4',Georgia,serif;font-size:18px;font-weight:600;line-height:1.3">{{ p.name }}</span>
+            <span style="font-size:13px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:#9AA1AB">{{ p.role }}</span>
+          </li>
+        </sc-for>
+      </ul>
+    </div>
+  </section>
+
+  <dc-import name="CTABand" hint-size="100%,300px"></dc-import>
+</main>
+<dc-import name="Footer" hint-size="100%,460px"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() { setTimeout(() => window.MUNReveal && window.MUNReveal(), 150); }
+  renderVals() {
+    return {
+      committees: [
+        { num: '01', abbr: 'UNSC', name: 'United Nations Security Council', remit: 'Fifteen seats, five vetoes, and a crisis that will not wait for consensus.', topicCount: 2 },
+        { num: '02', abbr: 'UNHRC', name: 'Human Rights Council', remit: 'Where states are asked to answer for how they treat their own people.', topicCount: 2 },
+        { num: '03', abbr: 'WHO', name: 'World Health Organization', remit: 'Outbreaks, access to medicine, and who pays when a health system fails.', topicCount: 2 },
+        { num: '04', abbr: 'UNEP', name: 'Environment Programme', remit: 'Climate finance, biodiversity, and the gap between pledges and policy.', topicCount: 2 },
+        { num: '05', abbr: 'ECOSOC', name: 'Economic and Social Council', remit: 'Debt, development and trade — the slow machinery that moves the most money.', topicCount: 2 },
+        { num: '06', abbr: 'CRISIS', name: 'Historical Crisis Committee', remit: 'A historical flashpoint, replayed. The situation changes while you debate it.', topicCount: 1 },
+      ],
+      steps: [
+        { num: '01', title: 'Register', desc: 'One form, about five minutes. Sign up on your own or as part of a school delegation.', when: 'Closes [REGISTRATION CLOSES]' },
+        { num: '02', title: 'Get your assignment', desc: 'We email you your country and committee, with everything you need to start reading.', when: '[ASSIGNMENTS RELEASED]' },
+        { num: '03', title: 'Prepare & research', desc: 'Read the background guide, write a position paper, and arrive knowing your country\'s line.', when: 'Paper due [POSITION PAPER DUE]' },
+        { num: '04', title: 'Debate', desc: 'Two days, from your opening speech to the final vote on your committee\'s resolution.', when: '21–22 November 2026' },
+      ],
+      leads: [
+        { slot: 'mun-lead-1', name: '[NAME]', role: 'Secretary-General' },
+        { slot: 'mun-lead-2', name: '[NAME]', role: 'Deputy Sec.-Gen.' },
+        { slot: 'mun-lead-3', name: '[NAME]', role: 'Director-General' },
+        { slot: 'mun-lead-4', name: '[NAME]', role: 'Chef de Cabinet' },
+        { slot: 'mun-lead-5', name: '[NAME]', role: 'USG Committees' },
+        { slot: 'mun-lead-6', name: '[NAME]', role: 'USG Logistics' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

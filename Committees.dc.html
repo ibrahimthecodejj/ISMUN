@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Committees — Ignite School MUN 2026</title>
+<meta name="description" content="[N COMMITTEES] committees and their topics for Ignite School MUN 2026.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600&display=swap">
+<script src="reveal.js"></script>
+<style>
+  body { margin:0; background:#fff; color:#16181C; font-family:Inter,system-ui,sans-serif; overflow-x:hidden; }
+  * { box-sizing:border-box; }
+  a { color:#C08F00; } a:hover { color:#16181C; }
+  :focus-visible { outline:2px solid #C08F00; outline-offset:2px; }
+  @media (prefers-reduced-motion: reduce) { * { transition:none !important; } }
+</style>
+</helmet>
+<dc-import name="Nav" active="committees" hint-size="100%,80px"></dc-import>
+<main>
+  <dc-import name="PageHeader" eyebrow="HOME / COMMITTEES" title="Committees" blurb="[N] committees. [N] topics. One weekend." hint-size="100%,220px"></dc-import>
+
+  <section style="background:#fff;padding:clamp(40px,6vw,64px) 0 clamp(56px,9vw,120px)">
+    <div style="width:100%;max-width:1200px;margin:0 auto;padding:0 clamp(24px,5vw,64px);display:flex;flex-direction:column;gap:clamp(28px,4vw,40px)">
+      <div style="display:flex;flex-wrap:wrap;gap:16px 24px;align-items:center;justify-content:space-between;border-bottom:1px solid #DCDFE4;padding-bottom:24px">
+        <div role="group" aria-label="Filter committees by block" style="display:flex;flex-wrap:wrap;gap:10px">
+          <sc-for list="{{ filters }}" as="f" hint-placeholder-count="4">
+            <button type="button" onClick="{{ f.onClick }}" aria-pressed="{{ f.active }}" style="font-family:Inter,sans-serif;font-size:14px;font-weight:500;padding:10px 18px;min-height:44px;border-radius:4px;cursor:pointer;background:{{ f.bg }};color:{{ f.fg }};border:1px solid {{ f.bd }};transition:background 180ms ease,border-color 180ms ease" style-hover="border-color:#C08F00">{{ f.label }}</button>
+          </sc-for>
+        </div>
+        <span style="font-size:14px;font-weight:500;color:#9AA1AB">{{ countLabel }}</span>
+      </div>
+
+      <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:24px">
+        <sc-for list="{{ shown }}" as="c" hint-placeholder-count="6">
+          <li data-reveal>
+            <a href="CommitteeDetail.dc.html" style="display:grid;grid-template-columns:auto 1fr;gap:clamp(16px,3vw,32px);background:#fff;border:1px solid #DCDFE4;border-radius:4px;padding:clamp(22px,3vw,36px);text-decoration:none;color:#16181C;transition:border-color 180ms ease" style-hover="border-color:#E8B10A">
+              <span aria-hidden="true" style="font-family:'Source Serif 4',Georgia,serif;font-weight:700;font-size:48px;line-height:1;color:#DCDFE4">{{ c.num }}</span>
+              <span style="display:flex;flex-direction:column;gap:14px;min-width:0">
+                <span style="display:flex;flex-wrap:wrap;gap:8px 16px;align-items:baseline;justify-content:space-between">
+                  <span style="display:flex;flex-direction:column;gap:4px">
+                    <span style="font-family:'Source Serif 4',Georgia,serif;font-weight:700;font-size:clamp(24px,2.6vw,30px);line-height:1.2;letter-spacing:-.01em">{{ c.abbr }}</span>
+                    <span style="font-size:17px;color:#5B636E">{{ c.name }}</span>
+                  </span>
+                  <span style="font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#5B636E;border:1px solid #DCDFE4;border-radius:4px;padding:6px 10px;white-space:nowrap">{{ c.block }}</span>
+                </span>
+                <span style="font-size:17px;line-height:1.7;color:#5B636E;max-width:68ch">{{ c.desc }}</span>
+                <span style="display:flex;flex-direction:column;gap:0;border-top:1px solid #DCDFE4">
+                  <sc-for list="{{ c.topics }}" as="t" hint-placeholder-count="2">
+                    <span style="display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline;padding:12px 0;border-bottom:1px solid #DCDFE4">
+                      <span style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#C08F00;min-width:64px">{{ t.label }}</span>
+                      <span style="font-size:17px;line-height:1.5;color:#16181C;flex:1;min-width:0">{{ t.title }}</span>
+                    </span>
+                  </sc-for>
+                </span>
+                <span style="display:flex;flex-wrap:wrap;gap:10px 20px;align-items:center;justify-content:space-between;margin-top:2px">
+                  <span style="display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center">
+                    <span style="font-size:14px;font-weight:500;color:#9AA1AB">{{ c.seats }} delegates</span>
+                    <span style="font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#C08F00;background:#FFF7DC;border-radius:4px;padding:6px 10px">{{ c.difficulty }}</span>
+                  </span>
+                  <span style="font-size:15px;font-weight:600;border-bottom:2px solid #E8B10A;padding-bottom:2px">View committee →</span>
+                </span>
+              </span>
+            </a>
+          </li>
+        </sc-for>
+      </ul>
+
+      <p style="margin:0;font-size:15px;line-height:1.6;color:#9AA1AB;font-style:italic;background:#F4F5F7;border-radius:4px;padding:16px 20px">Committee list and topics are provisional until [ASSIGNMENTS RELEASED]. Background guides appear on Resources as they are published.</p>
+    </div>
+  </section>
+
+  <dc-import name="CTABand" hint-size="100%,300px"></dc-import>
+</main>
+<dc-import name="Footer" hint-size="100%,460px"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const DATA = [
+  { num: '01', abbr: 'UNSC', name: 'United Nations Security Council', block: 'Security', difficulty: 'Advanced', seats: 15,
+    desc: 'The smallest room and the loudest one: fifteen seats, five vetoes, and a crisis that will not wait for the rest of the world to agree.',
+    topics: [{ label: 'Topic A', title: 'Maritime security and freedom of navigation in the Red Sea' }, { label: 'Topic B', title: 'The use of armed drones by non-state actors' }] },
+  { num: '02', abbr: 'UNHRC', name: 'Human Rights Council', block: 'General Assembly', difficulty: 'Intermediate', seats: 40,
+    desc: 'Where states are asked to answer for how they treat their own people, and rarely enjoy the question.',
+    topics: [{ label: 'Topic A', title: 'Digital surveillance and the right to privacy' }, { label: 'Topic B', title: 'Protecting human rights defenders from transnational repression' }] },
+  { num: '03', abbr: 'WHO', name: 'World Health Organization', block: 'Specialised', difficulty: 'Beginner', seats: 35,
+    desc: 'Outbreaks, medicines, and the uncomfortable question of who pays when a health system fails.',
+    topics: [{ label: 'Topic A', title: 'Equitable access to next-generation vaccines' }, { label: 'Topic B', title: 'Antimicrobial resistance as a global health emergency' }] },
+  { num: '04', abbr: 'UNEP', name: 'Environment Programme', block: 'Specialised', difficulty: 'Beginner', seats: 35,
+    desc: 'Where climate pledges meet the cost of keeping them, and somebody eventually has to name a figure.',
+    topics: [{ label: 'Topic A', title: 'Financing loss and damage in climate-vulnerable states' }, { label: 'Topic B', title: 'Regulating deep-sea mining in international waters' }] },
+  { num: '05', abbr: 'ECOSOC', name: 'Economic and Social Council', block: 'General Assembly', difficulty: 'Intermediate', seats: 45,
+    desc: 'Debt, development and trade — the slow machinery that quietly moves the most money.',
+    topics: [{ label: 'Topic A', title: 'Sovereign debt relief for developing economies' }, { label: 'Topic B', title: 'Labour rights in global supply chains' }] },
+  { num: '06', abbr: 'CRISIS', name: 'Historical Crisis Committee', block: 'Crisis', difficulty: 'Advanced', seats: 20,
+    desc: 'A historical flashpoint replayed in real time, where the situation changes faster than you can draft.',
+    topics: [{ label: 'Topic', title: 'A twentieth-century flashpoint — the premise is released in the room' }] },
+];
+const BLOCKS = ['All', 'General Assembly', 'Specialised', 'Crisis', 'Security'];
+
+class Component extends DCLogic {
+  state = { block: 'All' };
+  componentDidMount() { setTimeout(() => window.MUNReveal && window.MUNReveal(), 150); }
+  renderVals() {
+    const active = this.state.block;
+    const shown = active === 'All' ? DATA : DATA.filter(c => c.block === active);
+    return {
+      shown,
+      countLabel: shown.length + ' of ' + DATA.length + ' committees',
+      filters: BLOCKS.map(b => ({
+        label: b,
+        active: b === active,
+        bg: b === active ? '#E8B10A' : '#FFFFFF',
+        fg: '#16181C',
+        bd: b === active ? '#E8B10A' : '#DCDFE4',
+        onClick: () => this.setState({ block: b }, () => window.MUNReveal && window.MUNReveal()),
+      })),
+    };
+  }
+}
+</script>
+</body>
+</html>

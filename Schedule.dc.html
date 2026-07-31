@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Schedule &amp; Venue — Ignite School MUN 2026</title>
+<meta name="description" content="Two-day agenda, dress code and venue details for Ignite School MUN 2026.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600&display=swap">
+<script src="image-slot.js"></script>
+<script src="reveal.js"></script>
+<style>
+  body { margin:0; background:#fff; color:#16181C; font-family:Inter,system-ui,sans-serif; overflow-x:hidden; }
+  * { box-sizing:border-box; }
+  a { color:#C08F00; } a:hover { color:#16181C; }
+  :focus-visible { outline:2px solid #C08F00; outline-offset:2px; }
+  @media (prefers-reduced-motion: reduce) { * { transition:none !important; } }
+</style>
+</helmet>
+<dc-import name="Nav" active="schedule" hint-size="100%,80px"></dc-import>
+<main>
+  <dc-import name="PageHeader" eyebrow="HOME / SCHEDULE" title="Schedule &amp; venue" blurb="Two days, four committee sessions, one closing ceremony. Times are provisional." hint-size="100%,220px"></dc-import>
+
+  <section style="background:#fff;padding:clamp(40px,6vw,64px) 0 0">
+    <div data-reveal style="width:100%;max-width:1200px;margin:0 auto;padding:0 clamp(24px,5vw,64px)">
+      <dl style="margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:#DCDFE4;border:1px solid #DCDFE4;border-radius:4px;overflow:hidden">
+        <div style="background:#fff;padding:clamp(20px,3vw,28px);display:flex;flex-direction:column;gap:8px">
+          <dt style="font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#C08F00">Dates</dt>
+          <dd style="margin:0;font-family:'Source Serif 4',Georgia,serif;font-size:21px;line-height:1.35">21–22 November 2026</dd>
+          <dd style="margin:0;font-size:15px;color:#5B636E">[DAILY START/END TIMES]</dd>
+        </div>
+        <div style="background:#fff;padding:clamp(20px,3vw,28px);display:flex;flex-direction:column;gap:8px">
+          <dt style="font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#C08F00">Venue</dt>
+          <dd style="margin:0;font-family:'Source Serif 4',Georgia,serif;font-size:21px;line-height:1.35">Ignite School</dd>
+          <dd style="margin:0;font-size:15px;color:#5B636E">[CITY, COUNTRY]</dd>
+        </div>
+        <div style="background:#fff;padding:clamp(20px,3vw,28px);display:flex;flex-direction:column;gap:8px">
+          <dt style="font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#C08F00">Dress code</dt>
+          <dd style="margin:0;font-family:'Source Serif 4',Georgia,serif;font-size:21px;line-height:1.35">Western business attire</dd>
+          <dd style="margin:0;font-size:15px;color:#5B636E">Full details below.</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <section style="background:#fff;padding:clamp(40px,6vw,64px) 0 clamp(56px,9vw,120px)">
+    <div style="width:100%;max-width:1200px;margin:0 auto;padding:0 clamp(24px,5vw,64px);display:flex;flex-direction:column;gap:clamp(24px,3vw,32px)">
+      <div role="tablist" aria-label="Conference days" style="display:flex;gap:clamp(16px,3vw,32px);border-bottom:1px solid #DCDFE4;overflow-x:auto;padding-bottom:0">
+        <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="3">
+          <button type="button" role="tab" aria-selected="{{ t.active }}" onClick="{{ t.onClick }}" style="font-family:Inter,sans-serif;font-size:15px;font-weight:600;color:{{ t.fg }};background:none;border:none;border-bottom:3px solid {{ t.bar }};padding:12px 2px;min-height:44px;cursor:pointer;white-space:nowrap;transition:color 180ms ease" style-hover="color:#C08F00">{{ t.label }}</button>
+        </sc-for>
+      </div>
+      <div role="tabpanel" style="display:flex;flex-direction:column;gap:0">
+        <sc-for list="{{ rows }}" as="r" hint-placeholder-count="7">
+          <div style="display:grid;grid-template-columns:minmax(96px,120px) 1fr;gap:clamp(14px,2.4vw,24px);align-items:start;padding:20px 0;border-bottom:1px solid #DCDFE4">
+            <span style="font-size:15px;font-weight:600;color:#16181C;text-align:right;padding-right:clamp(14px,2.4vw,24px);border-right:1px solid #DCDFE4;line-height:1.5">{{ r.time }}</span>
+            <span style="display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start;min-width:0">
+              <span aria-hidden="true" style="display:block;width:3px;height:22px;background:{{ r.bar }};margin-top:4px"></span>
+              <span style="display:flex;flex-direction:column;gap:6px;min-width:0">
+                <span style="font-family:'Source Serif 4',Georgia,serif;font-size:20px;line-height:1.35">{{ r.title }}</span>
+                <span style="font-size:15px;line-height:1.6;color:#5B636E">{{ r.meta }}</span>
+              </span>
+            </span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#FFF7DC;padding:clamp(56px,9vw,120px) 0">
+    <div style="width:100%;max-width:1200px;margin:0 auto;padding:0 clamp(24px,5vw,64px);display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(28px,4vw,48px)">
+      <div data-reveal style="display:flex;flex-direction:column;gap:14px;align-items:flex-start">
+        <span aria-hidden="true" style="display:block;width:48px;height:3px;background:#C08F00"></span>
+        <span style="font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#C08F00">Dress code</span>
+        <h2 style="margin:0;font-family:'Source Serif 4',Georgia,serif;font-weight:700;font-size:clamp(26px,3vw,36px);line-height:1.2;letter-spacing:-.015em">Western business attire</h2>
+        <p style="margin:0;font-size:17px;line-height:1.7;color:#5B636E;max-width:52ch;text-wrap:pretty">A suit or equivalent formal business dress. Jeans, trainers and hoodies do not count, and neither does a blazer over a t-shirt. National dress is always welcome and always appropriate. The thing people get wrong is footwear: you will be on your feet for most of an unmoderated caucus, so wear shoes you can stand in for two full days.</p>
+      </div>
+      <div data-reveal style="display:flex;flex-direction:column;gap:14px;align-items:flex-start">
+        <span aria-hidden="true" style="display:block;width:48px;height:3px;background:#C08F00"></span>
+        <span style="font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#C08F00">Conduct</span>
+        <h2 style="margin:0;font-family:'Source Serif 4',Georgia,serif;font-weight:700;font-size:clamp(26px,3vw,36px);line-height:1.2;letter-spacing:-.015em">How we expect you to behave</h2>
+        <p style="margin:0;font-size:17px;line-height:1.7;color:#5B636E;max-width:52ch;text-wrap:pretty">Attack the argument, never the delegate — in committee, at lunch, and online afterwards. Phones stay away during formal debate. Position papers must be your own work; anything copied or generated wholesale is disqualified from awards. A delegate who crosses a line gets one warning from the dais, and after that the Secretariat is involved and their school is told.</p>
+        <a href="Resources.dc.html" style="font-size:16px;font-weight:600;color:#16181C;text-decoration:none;border-bottom:2px solid #C08F00;padding-bottom:2px" style-hover="color:#C08F00">Read the full rules →</a>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#F4F5F7;padding:clamp(56px,9vw,120px) 0">
+    <div style="width:100%;max-width:1200px;margin:0 auto;padding:0 clamp(24px,5vw,64px);display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(32px,5vw,64px);align-items:center">
+      <div data-reveal style="position:relative;aspect-ratio:16/9;border:1px solid #DCDFE4;border-radius:4px;overflow:hidden">
+        <image-slot id="mun-venue" shape="rect" placeholder="Venue photo or static map, 16:9"></image-slot>
+      </div>
+      <div data-reveal style="display:flex;flex-direction:column;gap:16px;align-items:flex-start">
+        <span aria-hidden="true" style="display:block;width:48px;height:3px;background:#E8B10A"></span>
+        <span style="font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#C08F00">Venue</span>
+        <h2 style="margin:0;font-family:'Source Serif 4',Georgia,serif;font-weight:700;font-size:clamp(26px,3vw,36px);line-height:1.2;letter-spacing:-.015em">Ignite School</h2>
+        <p style="margin:0;font-size:17px;line-height:1.7;color:#5B636E;max-width:44ch">[FULL ADDRESS]</p>
+        <p style="margin:0;font-size:17px;line-height:1.7;color:#5B636E;max-width:52ch;text-wrap:pretty">On the first morning, come to the main entrance rather than the side gates, which stay locked until mid-morning. Registration desks are directly inside, signposted by committee. Allow extra time on day one — check-in takes longer than you expect, and the opening ceremony starts on schedule whether or not you are in the hall for it.</p>
+        <a href="#" style="font-size:16px;font-weight:600;color:#16181C;text-decoration:none;border-bottom:2px solid #E8B10A;padding-bottom:2px" style-hover="color:#C08F00">Open in Google Maps →</a>
+      </div>
+    </div>
+  </section>
+
+  <dc-import name="CTABand" hint-size="100%,300px"></dc-import>
+</main>
+<dc-import name="Footer" hint-size="100%,460px"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const GOLD = '#E8B10A', GREY = '#DCDFE4';
+const DAYS = [
+  { label: 'Day 1 · Sat 21 Nov', rows: [
+    { time: '08:30 — 09:30', title: 'Registration & delegate check-in', meta: 'Main Hall foyer · Collect your placard, badge and delegate pack.', bar: GREY },
+    { time: '09:45 — 10:45', title: 'Opening Ceremony', meta: 'Main Hall · Keynote by [GUEST SPEAKER] and the roll call of schools.', bar: GOLD },
+    { time: '11:00 — 13:00', title: 'Committee Session I', meta: 'All committee rooms · Setting the agenda and opening speeches.', bar: GREY },
+    { time: '13:00 — 14:00', title: 'Lunch', meta: 'Dining hall', bar: GREY },
+    { time: '14:00 — 16:30', title: 'Committee Session II', meta: 'All committee rooms · Moderated and unmoderated caucus.', bar: GREY },
+    { time: '16:45 — 17:30', title: 'Delegate social', meta: 'Dining hall · Optional. Meet the people you have been arguing with.', bar: GREY },
+  ]},
+  { label: 'Day 2 · Sun 22 Nov', rows: [
+    { time: '09:00 — 11:15', title: 'Committee Session III', meta: 'All committee rooms · Working papers and draft resolutions.', bar: GREY },
+    { time: '11:30 — 12:30', title: 'Crisis update', meta: 'Drama studio · Applies to the Historical Crisis Committee only.', bar: GOLD },
+    { time: '12:30 — 13:30', title: 'Lunch', meta: 'Dining hall', bar: GREY },
+    { time: '13:30 — 15:45', title: 'Committee Session IV', meta: 'All committee rooms · Amendments and final voting procedure.', bar: GREY },
+    { time: '16:00 — 16:45', title: 'General Assembly plenary', meta: 'Main Hall · Adopted resolutions presented to the floor.', bar: GOLD },
+    { time: '17:00 — 18:00', title: 'Closing Ceremony & awards', meta: 'Main Hall · Best delegate, best position paper, honourable mentions.', bar: GOLD },
+  ]},
+];
+
+class Component extends DCLogic {
+  state = { day: 0 };
+  componentDidMount() { setTimeout(() => window.MUNReveal && window.MUNReveal(), 150); }
+  renderVals() {
+    const d = this.state.day;
+    return {
+      rows: DAYS[d].rows,
+      tabs: DAYS.map((x, i) => ({
+        label: x.label,
+        active: i === d,
+        fg: i === d ? '#16181C' : '#5B636E',
+        bar: i === d ? '#E8B10A' : 'transparent',
+        onClick: () => this.setState({ day: i }),
+      })),
+    };
+  }
+}
+</script>
+</body>
+</html>

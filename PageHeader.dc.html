@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<section style="position:relative;background:#16181C;color:#fff;overflow:hidden;font-family:Inter,system-ui,sans-serif;min-height:{{ minH }};display:flex;align-items:center;padding:clamp(40px,7vw,64px) 0">
+  <div aria-hidden="true" style="position:absolute;inset:0;background-image:radial-gradient(#fff 1px,transparent 1px);background-size:24px 24px;opacity:.05;pointer-events:none"></div>
+  <div style="position:relative;width:100%;max-width:1200px;margin:0 auto;padding:0 clamp(24px,5vw,64px);display:flex;flex-direction:column;gap:16px;align-items:flex-start">
+    <span aria-hidden="true" style="display:block;width:48px;height:3px;background:#E8B10A"></span>
+    <span style="font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#E8B10A">{{ eyebrow }}</span>
+    <h1 style="margin:0;font-family:'Source Serif 4',Georgia,serif;font-weight:700;font-size:clamp(32px,4.4vw,44px);line-height:1.12;letter-spacing:-.015em;color:#fff;max-width:24ch;text-wrap:pretty">{{ title }}</h1>
+    <p style="margin:0;font-size:clamp(17px,1.6vw,20px);line-height:1.6;color:#9AA1AB;max-width:56ch;text-wrap:pretty">{{ blurb }}</p>
+  </div>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:240},&quot;eyebrow&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;HOME / ABOUT&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;title&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;About&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;blurb&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;tall&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      eyebrow: this.props.eyebrow ?? 'HOME / PAGE',
+      title: this.props.title ?? 'Page title',
+      blurb: this.props.blurb ?? '',
+      minH: this.props.tall ? '320px' : '220px',
+    };
+  }
+}
+</script>
+</body>
+</html>

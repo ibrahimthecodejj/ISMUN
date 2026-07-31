@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>The Team — Ignite School MUN 2026</title>
+<meta name="description" content="Secretariat, chairs, organising team and faculty advisors of Ignite School MUN 2026.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600&display=swap">
+<script src="image-slot.js"></script>
+<script src="reveal.js"></script>
+<style>
+  body { margin:0; background:#fff; color:#16181C; font-family:Inter,system-ui,sans-serif; overflow-x:hidden; }
+  * { box-sizing:border-box; }
+  a { color:#C08F00; } a:hover { color:#16181C; }
+  :focus-visible { outline:2px solid #C08F00; outline-offset:2px; }
+  @media (prefers-reduced-motion: reduce) { * { transition:none !important; } }
+</style>
+</helmet>
+<dc-import name="Nav" active="team" hint-size="100%,80px"></dc-import>
+<main>
+  <dc-import name="PageHeader" eyebrow="HOME / TEAM" title="The team" blurb="The students building Ignite School's first Model UN, and the teachers who said yes to it." hint-size="100%,220px"></dc-import>
+
+  <section style="background:#fff;padding:clamp(56px,9vw,120px) 0">
+    <div style="width:100%;max-width:1200px;margin:0 auto;padding:0 clamp(24px,5vw,64px);display:flex;flex-direction:column;gap:clamp(28px,4vw,40px)">
+      <div data-reveal style="display:flex;flex-direction:column;gap:16px;align-items:flex-start">
+        <span aria-hidden="true" style="display:block;width:48px;height:3px;background:#E8B10A"></span>
+        <span style="font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#C08F00">Secretariat</span>
+        <h2 style="margin:0;font-family:'Source Serif 4',Georgia,serif;font-weight:700;font-size:clamp(30px,3.6vw,44px);line-height:1.15;letter-spacing:-.015em">Who runs the conference</h2>
+      </div>
+      <ul style="margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:32px">
+        <sc-for list="{{ secretariat }}" as="p" hint-placeholder-count="6">
+          <li data-reveal style="display:flex;flex-direction:column;gap:14px;align-items:flex-start">
+            <span style="position:relative;display:block;width:100%;aspect-ratio:4/5;border:1px solid #DCDFE4;border-radius:4px;overflow:hidden;filter:grayscale(1);transition:filter 180ms ease" style-hover="filter:grayscale(0)">
+              <image-slot id="{{ p.slot }}" shape="rect" placeholder="Portrait 4:5"></image-slot>
+            </span>
+            <span style="font-family:'Source Serif 4',Georgia,serif;font-size:21px;font-weight:600;line-height:1.3">{{ p.name }}</span>
+            <span style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#C08F00">{{ p.role }}</span>
+            <span style="font-size:16px;line-height:1.7;color:#5B636E">{{ p.bio }}</span>
+            <a href="Contact.dc.html" aria-label="Email this team member" style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid #DCDFE4;border-radius:4px;transition:border-color 180ms ease" style-hover="border-color:#E8B10A">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5B636E" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3.5 6.5 8.5 6 8.5-6"></path></svg>
+            </a>
+          </li>
+        </sc-for>
+      </ul>
+    </div>
+  </section>
+
+  <section style="background:#F4F5F7;padding:clamp(56px,9vw,120px) 0">
+    <div style="width:100%;max-width:1200px;margin:0 auto;padding:0 clamp(24px,5vw,64px);display:flex;flex-direction:column;gap:clamp(28px,4vw,40px)">
+      <div data-reveal style="display:flex;flex-direction:column;gap:16px;align-items:flex-start">
+        <span aria-hidden="true" style="display:block;width:48px;height:3px;background:#E8B10A"></span>
+        <span style="font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#C08F00">Dais</span>
+        <h2 style="margin:0;font-family:'Source Serif 4',Georgia,serif;font-weight:700;font-size:clamp(30px,3.6vw,44px);line-height:1.15;letter-spacing:-.015em">Committee chairs</h2>
+      </div>
+      <ul style="margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:24px">
+        <sc-for list="{{ chairs }}" as="p" hint-placeholder-count="8">
+          <li data-reveal style="display:flex;flex-direction:column;gap:12px;align-items:flex-start;background:#fff;border:1px solid #DCDFE4;border-radius:4px;padding:20px">
+            <span style="position:relative;display:block;width:100%;aspect-ratio:4/5;border-radius:4px;overflow:hidden;background:#F4F5F7;filter:grayscale(1);transition:filter 180ms ease" style-hover="filter:grayscale(0)">
+              <image-slot id="{{ p.slot }}" shape="rect" placeholder="Chair photo 4:5"></image-slot>
+            </span>
+            <span style="font-family:'Source Serif 4',Georgia,serif;font-size:19px;font-weight:600;line-height:1.3">{{ p.name }}</span>
+            <span style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#9AA1AB">{{ p.role }}</span>
+            <span style="font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#C08F00;background:#FFF7DC;border-radius:4px;padding:6px 10px">{{ p.committee }}</span>
+          </li>
+        </sc-for>
+      </ul>
+    </div>
+  </section>
+
+  <section style="background:#fff;padding:clamp(56px,9vw,120px) 0">
+    <div style="width:100%;max-width:1200px;margin:0 auto;padding:0 clamp(24px,5vw,64px);display:flex;flex-direction:column;gap:clamp(24px,3vw,32px)">
+      <div data-reveal style="display:flex;flex-direction:column;gap:16px;align-items:flex-start">
+        <span aria-hidden="true" style="display:block;width:48px;height:3px;background:#E8B10A"></span>
+        <span style="font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#C08F00">Behind the scenes</span>
+        <h2 style="margin:0;font-family:'Source Serif 4',Georgia,serif;font-weight:700;font-size:clamp(30px,3.6vw,44px);line-height:1.15;letter-spacing:-.015em">Organising &amp; logistics</h2>
+      </div>
+      <ul data-reveal style="margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:0 clamp(32px,5vw,64px)">
+        <sc-for list="{{ staff }}" as="p" hint-placeholder-count="10">
+          <li style="display:flex;flex-wrap:wrap;gap:8px 16px;align-items:baseline;justify-content:space-between;padding:16px 0;border-bottom:1px solid #DCDFE4">
+            <span style="font-size:17px;font-weight:500">{{ p.name }}</span>
+            <span style="font-size:15px;color:#9AA1AB">{{ p.role }}</span>
+          </li>
+        </sc-for>
+      </ul>
+    </div>
+  </section>
+
+  <section style="position:relative;background:#16181C;color:#fff;padding:clamp(56px,9vw,120px) 0;overflow:hidden">
+    <div aria-hidden="true" style="position:absolute;inset:0;background-image:radial-gradient(#fff 1px,transparent 1px);background-size:24px 24px;opacity:.05"></div>
+    <div style="position:relative;width:100%;max-width:1200px;margin:0 auto;padding:0 clamp(24px,5vw,64px);display:flex;flex-direction:column;gap:clamp(32px,4vw,48px);align-items:center;text-align:center">
+      <div data-reveal style="display:flex;flex-direction:column;gap:14px;align-items:center">
+        <span aria-hidden="true" style="display:block;width:48px;height:3px;background:#E8B10A"></span>
+        <span style="font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#E8B10A">Faculty</span>
+        <h2 style="margin:0;font-family:'Source Serif 4',Georgia,serif;font-weight:700;font-size:clamp(30px,3.6vw,44px);line-height:1.15;letter-spacing:-.015em;color:#fff">Advisors</h2>
+      </div>
+      <ul data-reveal style="margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;width:100%;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.12);border-radius:4px;overflow:hidden">
+        <sc-for list="{{ faculty }}" as="p" hint-placeholder-count="3">
+          <li style="background:#16181C;padding:clamp(24px,3vw,32px);display:flex;flex-direction:column;gap:6px;align-items:center">
+            <span style="font-family:'Source Serif 4',Georgia,serif;font-size:21px;font-weight:600">{{ p.name }}</span>
+            <span style="font-size:14px;color:#9AA1AB">{{ p.role }}</span>
+            <span style="font-size:14px;color:#9AA1AB">Ignite School</span>
+          </li>
+        </sc-for>
+      </ul>
+    </div>
+  </section>
+
+  <section style="background:#FFF7DC;padding:clamp(48px,7vw,88px) 0">
+    <div data-reveal style="width:100%;max-width:1200px;margin:0 auto;padding:0 clamp(24px,5vw,64px);display:flex;flex-wrap:wrap;gap:24px 48px;align-items:center;justify-content:space-between">
+      <div style="display:flex;flex-direction:column;gap:10px;max-width:48ch">
+        <span style="font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#C08F00">Applications open</span>
+        <h3 style="margin:0;font-family:'Source Serif 4',Georgia,serif;font-weight:700;font-size:clamp(24px,2.8vw,30px);line-height:1.25">Want to chair at ISMUN 2026?</h3>
+        <p style="margin:0;font-size:17px;line-height:1.6;color:#5B636E">Chair applications close [CHAIR APPLICATIONS CLOSE]. Previous MUN experience expected, but not a résumé.</p>
+      </div>
+      <a href="#" aria-label="Apply to chair — opens the chair application form" style="background:#E8B10A;color:#16181C;font-size:16px;font-weight:600;text-decoration:none;padding:14px 28px;border-radius:4px;transition:background 180ms ease,transform 180ms ease" style-hover="background:#C08F00;transform:translateY(-1px)">Apply to Chair</a>
+    </div>
+  </section>
+</main>
+<dc-import name="Footer" hint-size="100%,460px"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const ROLES = ['Secretary-General', 'Deputy Secretary-General', 'Director-General', 'Chef de Cabinet', 'USG Committees', 'USG Logistics'];
+class Component extends DCLogic {
+  componentDidMount() { setTimeout(() => window.MUNReveal && window.MUNReveal(), 150); }
+  renderVals() {
+    return {
+      secretariat: ROLES.map((role, i) => ({
+        slot: 'mun-team-sec-' + (i + 1), name: '[NAME]', role,
+        bio: '[BIO — 2–3 lines. Year group, MUN history, what they are responsible for this year.]',
+      })),
+      chairs: Array.from({ length: 8 }, (_, i) => ({
+        slot: 'mun-team-chair-' + (i + 1), name: '[NAME]',
+        role: i % 2 === 0 ? 'Chair' : 'Deputy Chair',
+        committee: ['UNSC', 'UNSC', 'UNHRC', 'UNHRC', 'WHO', 'UNEP', 'ECOSOC', 'CRISIS'][i],
+      })),
+      staff: [
+        'Head of Logistics', 'Logistics', 'Head of Registration', 'Registration',
+        'Press & Media', 'Photography', 'Technology & AV', 'Design',
+        'Hospitality', 'Delegate Support',
+      ].map(role => ({ name: '[NAME]', role })),
+      faculty: [
+        { name: '[NAME]', role: 'MUN Director' },
+        { name: '[NAME]', role: 'Faculty Advisor' },
+        { name: '[NAME]', role: 'Faculty Advisor' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

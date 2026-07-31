@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Delegate Resources — Ignite School MUN 2026</title>
+<meta name="description" content="Rules of procedure, position paper template, background guides and a beginner's guide to MUN.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600&display=swap">
+<script src="reveal.js"></script>
+<style>
+  body { margin:0; background:#fff; color:#16181C; font-family:Inter,system-ui,sans-serif; overflow-x:hidden; }
+  * { box-sizing:border-box; }
+  a { color:#C08F00; } a:hover { color:#16181C; }
+  :focus-visible { outline:2px solid #C08F00; outline-offset:2px; }
+  @media (prefers-reduced-motion: reduce) { * { transition:none !important; } }
+</style>
+</helmet>
+<dc-import name="Nav" active="more" hint-size="100%,80px"></dc-import>
+<main>
+  <dc-import name="PageHeader" eyebrow="HOME / RESOURCES" title="Delegate resources" blurb="Everything you need to prepare. Start with the handbook, then read your background guide twice." hint-size="100%,220px"></dc-import>
+
+  <section style="background:#fff;padding:clamp(48px,7vw,88px) 0">
+    <div style="width:100%;max-width:1200px;margin:0 auto;padding:0 clamp(24px,5vw,64px);display:flex;flex-direction:column;gap:clamp(28px,4vw,40px)">
+      <div data-reveal style="display:flex;flex-direction:column;gap:16px;align-items:flex-start">
+        <span aria-hidden="true" style="display:block;width:48px;height:3px;background:#E8B10A"></span>
+        <span style="font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#C08F00">Essentials</span>
+        <h2 style="margin:0;font-family:'Source Serif 4',Georgia,serif;font-weight:700;font-size:clamp(30px,3.6vw,44px);line-height:1.15;letter-spacing:-.015em">Read these first</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px">
+        <sc-for list="{{ essentials }}" as="d" hint-placeholder-count="3">
+          <a href="#" data-reveal style="display:flex;flex-direction:column;gap:12px;align-items:flex-start;border:1px solid #DCDFE4;border-radius:4px;padding:28px;text-decoration:none;color:#16181C;transition:border-color 180ms ease,transform 180ms ease" style-hover="border-color:#E8B10A;transform:translateY(-2px)">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C08F00" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3v5h5"></path><path d="M19 8v11a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5Z"></path></svg>
+            <span style="font-family:'Source Serif 4',Georgia,serif;font-size:24px;font-weight:600;line-height:1.3">{{ d.title }}</span>
+            <span style="font-size:16px;line-height:1.7;color:#5B636E">{{ d.desc }}</span>
+            <span style="font-size:14px;font-weight:500;color:#9AA1AB;margin-top:auto;padding-top:8px">{{ d.meta }}</span>
+            <span style="font-size:15px;font-weight:600;border-bottom:2px solid #E8B10A;padding-bottom:2px">Download →</span>
+          </a>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#F4F5F7;padding:clamp(56px,9vw,120px) 0">
+    <div style="width:100%;max-width:1200px;margin:0 auto;padding:0 clamp(24px,5vw,64px);display:flex;flex-direction:column;gap:clamp(24px,3vw,32px)">
+      <div data-reveal style="display:flex;flex-direction:column;gap:16px;align-items:flex-start">
+        <span aria-hidden="true" style="display:block;width:48px;height:3px;background:#E8B10A"></span>
+        <span style="font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#C08F00">Per committee</span>
+        <h2 style="margin:0;font-family:'Source Serif 4',Georgia,serif;font-weight:700;font-size:clamp(30px,3.6vw,44px);line-height:1.15;letter-spacing:-.015em">Background guides</h2>
+      </div>
+      <ul data-reveal style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:0;background:#fff;border:1px solid #DCDFE4;border-radius:4px">
+        <sc-for list="{{ guides }}" as="g" hint-placeholder-count="6">
+          <li style="display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;justify-content:space-between;padding:clamp(16px,2.4vw,20px) clamp(18px,3vw,28px);border-bottom:1px solid #DCDFE4">
+            <span style="display:flex;flex-direction:column;gap:4px">
+              <span style="font-family:'Source Serif 4',Georgia,serif;font-size:20px;font-weight:600">{{ g.abbr }}</span>
+              <span style="font-size:15px;color:#9AA1AB">{{ g.name }}</span>
+            </span>
+            <span style="display:flex;flex-wrap:wrap;gap:10px 20px;align-items:center">
+              <sc-for list="{{ g.links }}" as="l" hint-placeholder-count="2">
+                <a href="#" style="font-size:15px;font-weight:600;color:{{ l.fg }};text-decoration:none;border-bottom:2px solid {{ l.bar }};padding-bottom:2px;font-style:{{ l.italic }}" style-hover="color:#C08F00">{{ l.label }}</a>
+              </sc-for>
+            </span>
+          </li>
+        </sc-for>
+      </ul>
+    </div>
+  </section>
+
+  <section style="background:#fff;padding:clamp(56px,9vw,120px) 0">
+    <div style="width:100%;max-width:1200px;margin:0 auto;padding:0 clamp(24px,5vw,64px);display:flex;flex-direction:column;gap:clamp(24px,3vw,32px);align-items:flex-start">
+      <div data-reveal style="display:flex;flex-direction:column;gap:16px;align-items:flex-start">
+        <span aria-hidden="true" style="display:block;width:48px;height:3px;background:#E8B10A"></span>
+        <span style="font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#C08F00">First conference?</span>
+        <h2 style="margin:0;font-family:'Source Serif 4',Georgia,serif;font-weight:700;font-size:clamp(30px,3.6vw,44px);line-height:1.15;letter-spacing:-.015em">New to MUN</h2>
+        <p style="margin:0;font-size:clamp(17px,1.7vw,20px);line-height:1.6;color:#5B636E;max-width:60ch;text-wrap:pretty">Five things that make the first day much less confusing. None of them take long.</p>
+      </div>
+      <ul data-reveal style="margin:0;padding:0;list-style:none;width:100%;max-width:820px;border-top:1px solid #DCDFE4">
+        <sc-for list="{{ primer }}" as="q" hint-placeholder-count="5">
+          <li style="border-bottom:1px solid #DCDFE4">
+            <button type="button" onClick="{{ q.onClick }}" aria-expanded="{{ q.open }}" style="width:100%;display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:center;text-align:left;background:none;border:none;padding:22px 4px;min-height:44px;cursor:pointer;font-family:Inter,sans-serif">
+              <span aria-hidden="true" style="font-family:'Source Serif 4',Georgia,serif;font-weight:700;font-size:20px;color:#DCDFE4">{{ q.num }}</span>
+              <span style="font-family:'Source Serif 4',Georgia,serif;font-size:clamp(19px,2vw,22px);font-weight:600;line-height:1.35;color:{{ q.fg }}">{{ q.title }}</span>
+              <span aria-hidden="true" style="font-size:24px;font-weight:400;color:#5B636E;line-height:1">{{ q.sign }}</span>
+            </button>
+            <sc-if value="{{ q.open }}" hint-placeholder-val="{{ true }}">
+              <p style="margin:0;padding:0 4px 24px 40px;font-size:17px;line-height:1.7;color:#5B636E;max-width:64ch;text-wrap:pretty">{{ q.body }}</p>
+            </sc-if>
+          </li>
+        </sc-for>
+      </ul>
+    </div>
+  </section>
+
+  <section style="position:relative;background:#16181C;color:#fff;padding:clamp(48px,7vw,88px) 0;overflow:hidden">
+    <div aria-hidden="true" style="position:absolute;inset:0;background-image:radial-gradient(#fff 1px,transparent 1px);background-size:24px 24px;opacity:.05"></div>
+    <div style="position:relative;width:100%;max-width:1200px;margin:0 auto;padding:0 clamp(24px,5vw,64px);display:flex;flex-direction:column;gap:24px;align-items:flex-start">
+      <span style="font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#E8B10A">Elsewhere</span>
+      <h2 style="margin:0;font-family:'Source Serif 4',Georgia,serif;font-weight:700;font-size:clamp(26px,3vw,36px);line-height:1.2;letter-spacing:-.015em;color:#fff">Primary sources worth your time</h2>
+      <ul style="margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:16px 40px">
+        <sc-for list="{{ external }}" as="x" hint-placeholder-count="4">
+          <li>
+            <a href="#" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:10px;font-size:17px;font-weight:500;color:#fff;text-decoration:none;border-bottom:2px solid rgba(232,177,10,.6);padding-bottom:3px" style-hover="color:#E8B10A">{{ x }}
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E8B10A" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M14 4h6v6M20 4 10 14M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"></path></svg>
+            </a>
+          </li>
+        </sc-for>
+      </ul>
+    </div>
+  </section>
+
+  <dc-import name="CTABand" hint-size="100%,300px"></dc-import>
+</main>
+<dc-import name="Footer" hint-size="100%,460px"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const PRIMER = [
+  { title: 'What is a position paper?', body: 'A position paper is a short statement of where your country stands on each topic, usually one page per topic. It should set out your government\'s position, the reasoning behind it, and what you want the committee to do about it. Chairs are looking for a defensible position backed by evidence, not a summary of the background guide. Papers are due on the date listed on the sign-up page, and a paper submitted late is not eligible for awards.' },
+  { title: 'How debate works', body: 'Every session opens with roll call, then the committee votes on which topic to debate first. A speakers list runs formal debate, interrupted by moderated caucus for focused discussion and unmoderated caucus for actual negotiation. Blocs form, working papers get written, and the dais turns the strongest into draft resolutions. Amendments are debated, then the committee moves into voting procedure and the resolution either passes or does not.' },
+  { title: 'Points and motions', body: 'You will use about five. Point of Personal Privilege means you cannot hear or need to step out. Point of Order means the rules are being broken. Point of Parliamentary Enquiry means you want to ask the chair how something works. Motion for a Moderated Caucus proposes focused debate on one sub-topic. Motion for an Unmoderated Caucus gives the room free time to negotiate. Everything else you can learn on the day.' },
+  { title: 'Research tips', body: 'Start with what your country has actually said — foreign ministry statements, speeches in the General Assembly, national position papers. Then look at how it voted on past resolutions, which tells you more than any press release. Read the background guide fully, then read one thing that disagrees with it. Finally, work out which two or three states you would need on side to pass anything, and what you could offer them.' },
+  { title: 'Glossary of terms', body: 'A bloc is a group of delegates negotiating together. A working paper is an early draft of ideas before the dais approves it as a draft resolution. A sponsor helped write it and supports it; a signatory only wants it debated and can still vote against. An amendment changes a clause in a draft. Quorum is the minimum number of delegates who must be present for the committee to do business.' },
+];
+const GUIDES = [
+  { abbr: 'UNSC', name: 'United Nations Security Council', ready: [true, true] },
+  { abbr: 'UNHRC', name: 'Human Rights Council', ready: [true, true] },
+  { abbr: 'WHO', name: 'World Health Organization', ready: [true, false] },
+  { abbr: 'UNEP', name: 'Environment Programme', ready: [true, false] },
+  { abbr: 'ECOSOC', name: 'Economic and Social Council', ready: [false, false] },
+  { abbr: 'CRISIS', name: 'Historical Crisis Committee', ready: [false] },
+];
+
+class Component extends DCLogic {
+  state = { open: 0 };
+  componentDidMount() { setTimeout(() => window.MUNReveal && window.MUNReveal(), 150); }
+  renderVals() {
+    return {
+      essentials: [
+        { title: 'Rules of procedure', desc: 'The exact rules of procedure ISMUN runs on, with every point and motion listed and explained in plain language.', meta: 'PDF · [SIZE]' },
+        { title: 'Position paper template', desc: 'The format every dais expects, with a fully worked example so you can see what a strong paper actually looks like.', meta: 'DOCX · [SIZE]' },
+        { title: 'Delegate handbook', desc: 'Everything practical in one place — awards criteria, the dress code, the conduct policy, and where lunch is.', meta: 'PDF · [SIZE]' },
+      ],
+      guides: GUIDES.map(g => ({
+        abbr: g.abbr, name: g.name,
+        links: g.ready.map((ok, i) => ok
+          ? { label: 'Topic ' + String.fromCharCode(65 + i) + ' guide →', fg: '#16181C', bar: '#E8B10A', italic: 'normal' }
+          : { label: 'Topic ' + String.fromCharCode(65 + i) + ' — coming soon', fg: '#9AA1AB', bar: 'transparent', italic: 'italic' }),
+      })),
+      primer: PRIMER.map((p, i) => ({
+        num: '0' + (i + 1),
+        title: p.title,
+        body: p.body,
+        open: this.state.open === i,
+        sign: this.state.open === i ? '−' : '+',
+        fg: this.state.open === i ? '#C08F00' : '#16181C',
+        onClick: () => this.setState(s => ({ open: s.open === i ? -1 : i })),
+      })),
+      external: ['UN.org', 'The UN Charter', 'UN Digital Library', 'Security Council Report'],
+    };
+  }
+}
+</script>
+</body>
+</html>
